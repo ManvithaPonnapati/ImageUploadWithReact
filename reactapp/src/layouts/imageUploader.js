@@ -21,6 +21,7 @@ const previewStyle = {
     width: 100,
     height: 100,
 };
+
 //Beginning of the React component ImageUploader
 class ImageUploader extends React.Component {
     //This is a section to initialize any variables/state of the react app
@@ -55,17 +56,17 @@ class ImageUploader extends React.Component {
             console.log(response);
         })
     }
-    
+
     //Method for uploading the file to a flask url
     uploadDropfile(file) {
-        console.log("File",file)
+        console.log("File", file)
         const url = 'http://127.0.0.1:5000/upload_file';
         const formData = new FormData();
         formData.append('file', file);
         //Use below if multiple files
         //formData.append('file[]', files[0])
         //formData.append('file[]', files[1])
-        
+
         //Set some headers, Acess controll allow origin allows you to upload files from loclahost:3000 (where react runs) to
         //http://127.0.0.1:5000 where flask is running.
         const config = {
@@ -87,43 +88,18 @@ class ImageUploader extends React.Component {
     render() {
 
         return (
-            <div className="wrapper">
-                <Dropzone className="dropzone-container" ref={dropzoneRef} accept="image/png, image/jpg"
-                          onDrop={this.onDrop} noClick noKeyboard>
-                    {({getRootProps, getInputProps, acceptedFiles}) => {
-                        return (
-                            <div className="container">
-                                <div {...getRootProps({className: 'dropzone'})}>
-                                    <input {...getInputProps()} />
-                                    <p>Drag and drop the file here</p>
-                                    <p className="smallP">(Only *.jpeg and *.png images will be accepted)</p>
-                                    <button
-                                        type="button"
-                                        onClick={openDialog}
-                                    >
-                                        Click to select file
-                                    </button>
-                                </div>
-                                <div className="row filesRow">
-                                    <div className="col-sm-1"></div>
-                                    <div className="col-md-11">
-                                        <h4>Files being uploaded</h4>
-                                        <ul>
-                                            {acceptedFiles.map(file => (
-                                                <li key={file.path}>
-                                                    {file.path} - {file.size} bytes
-
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    }}
-                </Dropzone>
-                <button type="submit" onClick={this.handleSubmit}>Upload Image</button>
+            <div className="container-fluid">
+                <div className="row drag-drop-row">
+                </div>
+                <div className="row about-row">
+                </div>
+                <div className="row drag-drop-row">
+                </div>
+               <div className="row about-row">
+                </div>
             </div>
+
+
         );
     }
 }

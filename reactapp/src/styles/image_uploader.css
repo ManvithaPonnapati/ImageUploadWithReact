@@ -1,37 +1,37 @@
-.dropzone{
-    width:90%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:10px;
-    padding:10px;
-    border:1px solid #2c3e50;
-    height:200px;
+html, body {
+
+
+    background: url("../images/planetearth.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
 }
-.dropzone button{
-      margin-top: 55px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-.dropzone p{
-    text-align: center;
-    font-size:2.5em;
 
+
+.container-fluid {
+    padding: 0px !important;
 }
-.dropzone .smallP{
-   text-align: center;
-    font-size:1em;
 
-
-
+.drag-drop-row {
+    min-height: 500px;
+    margin-top: 60px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    background-color: transparent;
+    color:white;
 }
-.filesRow
-{
-    margin-top:10px;
-    width:90%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+
+.about-row {
+    min-height: 600px;
+    width: 100%;
+    background-color: whitesmoke;
+    color:black;
 }
