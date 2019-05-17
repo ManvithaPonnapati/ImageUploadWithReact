@@ -90,12 +90,50 @@ class ImageUploader extends React.Component {
         return (
             <div className="container-fluid">
                 <div className="row drag-drop-row">
+                    <div className="upload-container">
+                        <h3 className="custom-header">Contribute to this project by uploading and tagging pictures</h3>
+                        <Dropzone className="dropzone-container" ref={dropzoneRef} accept="image/png, image/jpg"
+                                  onDrop={this.onDrop} noClick noKeyboard>
+                            {({getRootProps, getInputProps, acceptedFiles}) => {
+                                return (
+                                    <div className="container">
+                                        <div {...getRootProps({className: 'dropzone'})}>
+                                            <input {...getInputProps()} />
+                                            <h3>Drag and Drop files here to upload</h3>
+                                            <p className="smallP">You can upload multiple files at once(Only *.jpeg and
+                                                *.png images will be
+                                                accepted)</p>
+
+                                              <a href="#"className="href-link" onClick={openDialog}><span>Click to select files</span></a>
+                                        </div>
+                                    </div>);
+                            }}
+                        </Dropzone>
+                        {/*<button type="submit" className="upload-button" onClick={this.handleSubmit}>Upload Image</button>*/}
+
+                        <a href="#" className="fancy-button bg-gradient1" onClick={this.handleSubmit}><span>Upload & Continue</span></a>
+                    </div>
                 </div>
                 <div className="row about-row">
+                    <div className="col-md-3">
+                    </div>
+                    <div className="col-md-6">
+                        <div className="row about-us">
+                            <h2> Who are we ? </h2>
+                            <p className="bigP">
+                                The CCAI project is an interdisciplinary project aimed at creating images of accurate, vivid, and personalized outcomes of climate change. Our goal is to use cutting-edge machine learning techniques to produce images of how neighborhoods and houses will look like following the effects of global warming. By creating a more visceral understanding of the effects of climate change, we aim to strengthen public support for necessary actions and motivate people to make impactful decisions. As a prototype, we first focus on modeling flood consequences on homes.
+
+
+                            </p>
+                        </div>
+                    </div>
+                     <div className="col-md-3">
+                    </div>
+
                 </div>
                 <div className="row drag-drop-row">
                 </div>
-               <div className="row about-row">
+                <div className="row about-row">
                 </div>
             </div>
 

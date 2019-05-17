@@ -1,6 +1,13 @@
 import ImageUploader from "./layouts/imageUploader";
+import TagImages from "./layouts/tagImages";
 
 var indexRoutes = [
+    {
+        path: "/uploadwithtags",
+        name: "TagImages",
+        icon: "nc-icon nc-bank",
+        component: TagImages
+    },
     {
         path: "/",
         name: "ImageUploader",

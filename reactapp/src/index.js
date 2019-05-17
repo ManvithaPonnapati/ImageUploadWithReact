@@ -11,7 +11,7 @@ import Header from "./layouts/header";
 
 ReactDOM.render(
   <CookiesProvider>
-      {/*<Header></Header>*/}
+      <Header></Header>
     <Router>
       <Switch>
         {indexRoutes.map((prop, key) => {
