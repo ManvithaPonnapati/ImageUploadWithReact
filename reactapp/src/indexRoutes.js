@@ -1,5 +1,5 @@
 import ImageUploader from "./layouts/imageUploader";
-import TagImages from "./layouts/tagImages";
+import TagImages from "./components/tagImages";
 
 var indexRoutes = [
     {
